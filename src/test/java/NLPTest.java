@@ -3,6 +3,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.google.common.io.Files;
 import com.google.common.io.LineProcessor;
 import opennlp.tools.chunker.ChunkerME;
@@ -11,21 +12,25 @@ import opennlp.tools.doccat.*;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTagger;
 import opennlp.tools.postag.POSTaggerME;
+import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.PlainTextByLineStream;
 import opennlp.tools.util.Sequence;
 import opennlp.tools.util.Span;
 import org.junit.Test;
+import scala.collection.JavaConversions;
+
 
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.*;
+import java.util.HashSet;
+import java.util.Map;
 
 import static com.google.common.base.Strings.padEnd;
 import static com.google.common.base.Strings.padStart;
 import static com.google.common.collect.Iterators.filter;
-import static com.google.common.collect.Iterators.transform;
 import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.collect.Lists.transform;
 import static com.google.common.io.ByteStreams.newInputStreamSupplier;
@@ -401,7 +406,7 @@ public class NLPTest {
         final BufferedWriter ratingWriter = Files.newWriter(new File("yelp_model_rating"), Charset.defaultCharset());
         final BufferedWriter ratingTestDataWriter = Files.newWriter(new File("yelp_test_rating"), Charset.defaultCharset());
         int count = 0;
-        for (ArrayList<Map<String, String>> restaurant : json("yelp_reviews_3.txt").values()) {
+        for (ArrayList<Map<String, String>> restaurant : json("resources/yelp_reviews_3.txt").values()) {
             for (Map<String, String> review : restaurant) {
                 count++;
                 BufferedWriter sentiment = (count > INT) ? sentimentTestDataWriter : sentimentWriter;
@@ -424,5 +429,30 @@ public class NLPTest {
         /*System.out.println(Files.readLines(new File("/Users/rags/yelp_model_sentiment"), Charset.defaultCharset()));
         System.out.println(Files.readLines(new File("/Users/rags/yelp_model_rating"), Charset.defaultCharset()));*/
     }
+
+    @Test
+    public void idf() throws IOException {
+        int docCnt = 0;
+        final TagCounter tagCounter = new TagCounter();
+        for (ArrayList<Map<String, String>> restaurant : json("yelp_reviews_3.txt").values()) {
+            final Tokenizer tokenizer = tokenizer();
+            for (Map<String, String> review : restaurant) {
+                docCnt++;
+                final String review_text = review.get("text").replaceAll("\\.[\r\n]", " ").replaceAll("[\r\n]", " ").toLowerCase();
+                final String[] tokenize = tokenizer.tokenize(review_text);
+                final HashSet<String> strings = Sets.newHashSet(tokenize);
+                for (String string : strings) {
+                    tagCounter.increment(string);
+                }
+            }
+        }
+        final Collection<String> as = (Collection<String>) JavaConversions.asJavaCollection(tagCounter.words());
+        System.out.println("docCnt = " + docCnt);
+        for (String a : as) {
+            System.out.println(a + " " + tagCounter.count(a));
+        }
+    }
+
+
 
 }
