@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.opennlp:opennlp-maxent:3.0.2-incubating">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-maxent/3.0.2-incubating/opennlp-maxent-3.0.2-incubating.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-maxent/3.0.2-incubating/opennlp-maxent-3.0.2-incubating-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-maxent/3.0.2-incubating/opennlp-maxent-3.0.2-incubating-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/apache-opennlp-1.5.2-incubating-src.zip!/apache-opennlp-1.5.2-incubating-src/opennlp-uima/src/main/java" />
+      <root url="jar://$USER_HOME$/Downloads/apache-opennlp-1.5.2-incubating-src.zip!/apache-opennlp-1.5.2-incubating-src/opennlp-maxent/src/test/java" />
+      <root url="jar://$USER_HOME$/Downloads/apache-opennlp-1.5.2-incubating-src.zip!/apache-opennlp-1.5.2-incubating-src/opennlp-maxent/src/main/java" />
+      <root url="jar://$USER_HOME$/Downloads/apache-opennlp-1.5.2-incubating-src.zip!/apache-opennlp-1.5.2-incubating-src/opennlp-maxent/samples/sports" />
+      <root url="jar://$USER_HOME$/Downloads/apache-opennlp-1.5.2-incubating-src.zip!/apache-opennlp-1.5.2-incubating-src/opennlp-tools/src/test/java" />
+      <root url="jar://$USER_HOME$/Downloads/apache-opennlp-1.5.2-incubating-src.zip!/apache-opennlp-1.5.2-incubating-src/opennlp-tools/src/main/java" />
+    </SOURCES>
+  </library>
+</component>
