@@ -121,8 +121,9 @@ public class NLPTest {
 
     @Test
     public void ngram() throws Exception {
-        final NGramFeatureGenerator generator = new NGramFeatureGenerator();
+//        final NGramFeatureGenerator generator = new NGramFeatureGenerator();
 //        final BagOfWordsFeatureGenerator generator = new BagOfWordsFeatureGenerator();
+        final FeaturePresenceGenerator generator = new FeaturePresenceGenerator();
         final Collection<String> strings = generator.extractFeatures(new String[]{"I", "Think", ",", "But", "I", "Am", "not", "sure", "that", "Aadi", "is", "an", "Idiot"});
         System.out.print(strings);
     }
@@ -258,6 +259,16 @@ public class NLPTest {
                     }
                 });
     }
+
+    @Test
+    public void test_classifier() throws IOException {
+        foo("yelp_%s_sentiment",
+                new FeaturePresenceGenerator());
+    }
+
+
+
+
 
     boolean DEBUG = false;
 
