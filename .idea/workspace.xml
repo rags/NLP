@@ -4,16 +4,17 @@
     <option name="CUSTOM_SCOPE_NAME" value="Project and Libraries" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a401d155-bae9-4aec-b6ee-9166498fd1f6" name="Default" comment="" />
+    <list default="true" id="a401d155-bae9-4aec-b6ee-9166498fd1f6" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/en-ner-date.bin" afterPath="" />
+    </list>
     <ignored path="NLP.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/pom.xml" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358408277905" ignored="false" />
-    <file path="/NLPTest.java" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358945172842" ignored="false" />
+    <file path="/NLPTest.java" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1359020130781" ignored="false" />
     <file path="/fragment.java" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358859671091" ignored="false" />
     <file path="/tips.json" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358338681151" ignored="false" />
     <file path="/CreateModel.java" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358497731170" ignored="false" />
     <file path="/Predict.java" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358497845448" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358511271457" ignored="false" />
     <file path="/yelp_ratings_json-2" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358862528761" ignored="false" />
     <file path="/a.java" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358948448002" ignored="false" />
     <file path="/sample.java" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358929613740" ignored="false" />
@@ -21,6 +22,7 @@
     <file path="/a.html" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1358929376316" ignored="false" />
     <file path="/TaggedCounters.scala" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1359012510910" ignored="false" />
     <file path="/a.dummy" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1359012239082" ignored="false" />
+    <file path="/Dummy.txt" changelist="a401d155-bae9-4aec-b6ee-9166498fd1f6" time="1359019409092" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,22 +90,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NLPTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="NLPTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/NLPTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="13" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.0">
+            <state line="131" column="123" selection-start="5016" selection-end="5020" vertical-scroll-proportion="0.33333334">
               <folding>
-                <element signature="e#11248#11256#0" expanded="false" />
-                <element signature="e#11387#11417#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#11147#11155#0" expanded="true" />
+                <element signature="e#11286#11316#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Document.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tdidf/src/Document.scala">
+      <file leaf-file-name="yelp_model_rating" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yelp_model_rating">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="6" selection-start="7" selection-end="7" vertical-scroll-proportion="0.023041476">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yelp_model_sentiment" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yelp_model_sentiment">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yelp_test_rating" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yelp_test_rating">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yelp_test_sentiment" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yelp_test_sentiment">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Document.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tfidf/src/Document.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,6 +182,14 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -154,9 +201,10 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$USER_HOME$/Downloads/yelp_ratings_json-2" />
         <option value="$USER_HOME$/yelp_test_sentiment" />
-        <option value="$PROJECT_DIR$/src/test/java/NLPTest.java" />
         <option value="$PROJECT_DIR$/tdidf/src/TaggedCounters.scala" />
         <option value="$PROJECT_DIR$/tdidf/src/Document.scala" />
+        <option value="$PROJECT_DIR$/src/test/java/NLPTest.java" />
+        <option value="$PROJECT_DIR$/tfidf/src/Document.scala" />
       </list>
     </option>
   </component>
@@ -193,7 +241,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -219,7 +267,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -248,13 +295,94 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="tfidf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tfidf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,19 +392,19 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Library/scala-2.10.0/doc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/yelp_test_sentiment" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeJavaFiles" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -284,29 +412,7 @@
       <recent name="$USER_HOME$/Downloads/apache-opennlp-1.5.2-incubating-src/opennlp-maxent/samples/sports/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Scala Console.Scala Console">
-    <configuration default="false" name="NLPTest.testParsingSentiment" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="NLP" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NLPTest" />
-      <option name="METHOD_NAME" value="testParsingSentiment" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.NLPTest.testSentiment_adjectives">
     <configuration default="false" name="NLPTest.testSentiment_adjectives" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="NLP" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -388,6 +494,28 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="NLPTest.modelYelp" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="NLP" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NLPTest" />
+      <option name="METHOD_NAME" value="modelYelp" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -407,19 +535,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -447,6 +562,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -484,19 +612,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.NLPTest.testParsingSentiment" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.NLPTest.testSentiment_adjectives" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.NLPTest.pos" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NLPTest.ngram" />
-      <item index="4" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.NLPTest.testSentiment_adjectives" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.NLPTest.pos" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.NLPTest.ngram" />
+      <item index="3" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NLPTest.modelYelp" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.NLPTest.testSentiment_adjectives" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NLPTest.ngram" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.NLPTest.pos" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.NLPTest.testParsingSentiment" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NLPTest.testSentiment_adjectives" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NLPTest.modelYelp" />
+        <item index="2" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NLPTest.ngram" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.NLPTest.pos" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -553,7 +681,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -568,7 +696,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37925446" sideWeight="0.67094016" order="1" side_tool="false" content_ui="combo" x="406" y="49" width="468" height="702" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37925446" sideWeight="0.67094016" order="1" side_tool="false" content_ui="combo" x="406" y="49" width="468" height="702" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6866097" sideWeight="0.49027553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -638,28 +766,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_11.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="13" selection-start="5260" selection-end="5260" vertical-scroll-proportion="2.2255192" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/yelp_ratings_json-2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18758" column="30" selection-start="3192032" selection-end="3192032" vertical-scroll-proportion="-2.5769231" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-tools/1.5.2-incubating/opennlp-tools-1.5.2-incubating-sources.jar!/opennlp/tools/doccat/DocumentCategorizerME.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="13" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/14.0-rc1/guava-14.0-rc1-sources.jar!/com/google/common/primitives/SignedBytes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="19" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/14.0-rc1/guava-14.0-rc1-sources.jar!/com/google/common/net/HostAndPort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="19" selection-start="2156" selection-end="2156" vertical-scroll-proportion="0.0" />
@@ -720,20 +826,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/NLPTest.java">
+    <entry file="file://$PROJECT_DIR$/yelp_model_rating">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#11248#11256#0" expanded="false" />
-            <element signature="e#11387#11417#0" expanded="false" />
-          </folding>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tdidf/src/Document.scala">
+    <entry file="file://$PROJECT_DIR$/yelp_model_sentiment">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="7" selection-end="7" vertical-scroll-proportion="0.023041476">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yelp_test_rating">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yelp_test_sentiment">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfidf/src/Document.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/NLPTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="123" selection-start="5016" selection-end="5020" vertical-scroll-proportion="0.33333334">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#11147#11155#0" expanded="true" />
+            <element signature="e#11286#11316#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

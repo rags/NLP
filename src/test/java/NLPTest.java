@@ -58,7 +58,7 @@ public class NLPTest {
     }
 
     private TokenizerME tokenizer() throws IOException {
-        return new TokenizerME(new TokenizerModel(new FileInputStream("/Users/rags/Downloads/en-token.bin")));
+        return new TokenizerME(new TokenizerModel(getClass().getResourceAsStream("en-token.bin")));
     }
 
     private <T> void p(T[] a) {
@@ -85,7 +85,7 @@ public class NLPTest {
 
     private POSTaggerME posTagger() {
         try {
-            return new POSTaggerME(new POSModel(new FileInputStream("/Users/rags/Downloads/en-pos-maxent.bin")));
+            return new POSTaggerME(new POSModel(getClass().getResourceAsStream("en-pos-maxent.bin")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -93,7 +93,7 @@ public class NLPTest {
 
     @Test
     public void chunker() throws Exception {
-        final ChunkerModel chunkerModel = new ChunkerModel(new FileInputStream("/Users/rags/Downloads/en-chunker.bin"));
+        final ChunkerModel chunkerModel = new ChunkerModel(getClass().getResourceAsStream("en-chunker.bin"));
         final ChunkerME chunker = new ChunkerME(chunkerModel);
         final String[] tokens = tokenizer().tokenize("I cannot say enough about the amazing lobster risotto.");
         final POSTaggerME posTaggerME = posTagger();
@@ -156,7 +156,7 @@ public class NLPTest {
 
         final DoccatModel doccatModel = DocumentCategorizerME.train("en",
                 new DocumentSampleStream(
-                        new PlainTextByLineStream(new FileInputStream("/Users/rags/yelp_model_rating"), "UTF-8")
+                        new PlainTextByLineStream(new FileInputStream("yelp_model_rating"), "UTF-8")
                 ));
 
         DocumentCategorizerME myCategorizer = new DocumentCategorizerME(doccatModel,
@@ -168,7 +168,7 @@ public class NLPTest {
 
         int count = 0, failureCount = 0;
 
-        for (ArrayList<Map<String, String>> restaurant : json("/Users/rags/Downloads/yelp_ratings_json-2").values()) {
+        for (ArrayList<Map<String, String>> restaurant : json("yelp_ratings_json-2").values()) {
             for (Map<String, String> tip : restaurant) {
                 count++;
                 if (count <= INT) {
@@ -192,7 +192,7 @@ public class NLPTest {
 
         final DoccatModel doccatModel = DocumentCategorizerME.train("en",
                 new DocumentSampleStream(
-                        new PlainTextByLineStream(new FileInputStream("/Users/rags/yelp_model_rating"), "UTF-8")
+                        new PlainTextByLineStream(new FileInputStream("yelp_model_rating"), "UTF-8")
                 ));
 
         DocumentCategorizerME myCategorizer = new DocumentCategorizerME(doccatModel,
@@ -204,7 +204,7 @@ public class NLPTest {
 
         int count = 0, failureCount = 0;
 
-        for (ArrayList<Map<String, String>> restaurant : json("/Users/rags/Downloads/yelp_ratings_json-2").values()) {
+        for (ArrayList<Map<String, String>> restaurant : json("yelp_ratings_json-2").values()) {
             for (Map<String, String> tip : restaurant) {
                 count++;
                 if (count <= INT) {
@@ -345,7 +345,7 @@ public class NLPTest {
     public Map<String, ArrayList<Map<String, String>>> json(String path) {
         try {
             return new ObjectMapper().readValue(
-                    new File(path),
+                    getClass().getResourceAsStream(path),
                     Map.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -357,9 +357,9 @@ public class NLPTest {
     @Test
     public void modelFSTips() throws IOException {
 
-        final BufferedWriter bufferedWriter = Files.newWriter(new File("/Users/rags/yelp_model_rating"), Charset.defaultCharset());
+        final BufferedWriter bufferedWriter = Files.newWriter(new File("yelp_model_rating"), Charset.defaultCharset());
         int count = 0;
-        for (ArrayList<Map<String, String>> restaurant : json("/Users/rags/Downloads/yelp_ratings_json-2").values()) {
+        for (ArrayList<Map<String, String>> restaurant : json("yelp_ratings_json-2").values()) {
             for (Map<String, String> tip : restaurant) {
                 count++;
                 if (count > 800) {
@@ -370,7 +370,7 @@ public class NLPTest {
             }
         }
         bufferedWriter.close();
-        System.out.print(Files.readLines(new File("/Users/rags/model"), Charset.defaultCharset()));
+        System.out.print(Files.readLines(new File("model"), Charset.defaultCharset()));
     }
 
     @Test
@@ -385,12 +385,12 @@ public class NLPTest {
     @Test
     public void modelYelp() throws IOException {
 
-        final BufferedWriter sentimentWriter = Files.newWriter(new File("/Users/rags/yelp_model_sentiment"), Charset.defaultCharset());
-        final BufferedWriter sentimentTestDataWriter = Files.newWriter(new File("/Users/rags/yelp_test_sentiment"), Charset.defaultCharset());
-        final BufferedWriter ratingWriter = Files.newWriter(new File("/Users/rags/yelp_model_rating"), Charset.defaultCharset());
-        final BufferedWriter ratingTestDataWriter = Files.newWriter(new File("/Users/rags/yelp_test_rating"), Charset.defaultCharset());
+        final BufferedWriter sentimentWriter = Files.newWriter(new File("yelp_model_sentiment"), Charset.defaultCharset());
+        final BufferedWriter sentimentTestDataWriter = Files.newWriter(new File("yelp_test_sentiment"), Charset.defaultCharset());
+        final BufferedWriter ratingWriter = Files.newWriter(new File("yelp_model_rating"), Charset.defaultCharset());
+        final BufferedWriter ratingTestDataWriter = Files.newWriter(new File("yelp_test_rating"), Charset.defaultCharset());
         int count = 0;
-        for (ArrayList<Map<String, String>> restaurant : json("/Users/rags/Downloads/yelp_reviews_3.txt").values()) {
+        for (ArrayList<Map<String, String>> restaurant : json("yelp_reviews_3.txt").values()) {
             for (Map<String, String> review : restaurant) {
                 count++;
                 BufferedWriter sentiment = (count > INT) ? sentimentTestDataWriter : sentimentWriter;

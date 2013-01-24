@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NLP.iml" filepath="$PROJECT_DIR$/NLP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tdidf/tdidf.iml" filepath="$PROJECT_DIR$/tdidf/tdidf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tfidf/tfidf.iml" filepath="$PROJECT_DIR$/tfidf/tfidf.iml" />
     </modules>
   </component>
 </project>
