@@ -240,7 +240,7 @@ public class NLPTest {
     @Test
     public void testSentiment_adjectives() throws Exception {
 
-        foo("/Users/rags/yelp_%s_sentiment",
+        foo("yelp_%s_sentiment",
                 // new BagOfWordsFeatureGenerator(),
                 //new NGramFeatureGenerator(),
                 new FeatureGenerator() {
@@ -269,8 +269,19 @@ public class NLPTest {
     public void test_classifier() throws IOException {
         foo("yelp_%s_sentiment",
                 new FeaturePresenceGenerator());
+//                 new NGramFeatureGenerator());
     }
 
+    @Test
+    public void generate_word_distribution() throws IOException{
+        PlainTextByLineStream ps =
+                new PlainTextByLineStream(new FileInputStream(format("temp_aadi.txt", "model")), "UTF-8");
+        String word = ps.read();
+        while (word != null){
+             System.out.println(word);
+             word = ps.read();
+        }
+    }
 
 
 
@@ -281,7 +292,7 @@ public class NLPTest {
         final DoccatModel doccatModel = DocumentCategorizerME.train("en",
                 new DocumentSampleStream(
                         new PlainTextByLineStream(new FileInputStream(format(inputfileFormat, "model")), "UTF-8")
-                ), 0, 100, features);
+                ), 0, 1000, features);
 
         final DocumentCategorizerME myCategorizer = new DocumentCategorizerME(doccatModel, features);
 
