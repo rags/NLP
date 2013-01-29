@@ -129,8 +129,21 @@ public class NLPTest {
 //        final NGramFeatureGenerator generator = new NGramFeatureGenerator();
 //        final BagOfWordsFeatureGenerator generator = new BagOfWordsFeatureGenerator();
         final FeaturePresenceGenerator generator = new FeaturePresenceGenerator();
-        final Collection<String> strings = generator.extractFeatures(new String[]{"I", "Think", ",", "But", "I", "Am", "not", "sure", "that", "Aadi", "is", "an", "Idiot"});
-        System.out.print(strings);
+        DocumentSampleStream doc = new DocumentSampleStream(
+                new PlainTextByLineStream(new FileInputStream("yelp_model_sentiment"), "UTF-8")
+        );
+        DocumentSample ds = doc.read();
+
+//        System.out.print(ds.toString());
+        final BufferedWriter sentimentWriter = Files.newWriter(new File("features.csv"), Charset.defaultCharset());
+        while (ds != null){
+            Collection<String> strings = generator.extractFeatures(ds.getText());
+            sentimentWriter.append(ds.getCategory()).append(",").append(Joiner.on(", ").join(strings));
+            sentimentWriter.newLine();
+            ds = doc.read();
+        }
+        sentimentWriter.close();
+//        System.out.print(strings);
     }
 
     /*,
@@ -292,9 +305,32 @@ public class NLPTest {
         final DoccatModel doccatModel = DocumentCategorizerME.train("en",
                 new DocumentSampleStream(
                         new PlainTextByLineStream(new FileInputStream(format(inputfileFormat, "model")), "UTF-8")
-                ), 0, 1000, features);
+                ), 0, 100, features);
 
-        final DocumentCategorizerME myCategorizer = new DocumentCategorizerME(doccatModel, features);
+        final DocumentCategorizerME myCategorizer = new DocumentCategorizerME(doccatModel, features){
+            @Override
+            public String getBestCategory(double[] outcome) {
+                double pos = outcome[getIndex("P")];
+                double neg = outcome[getIndex("N")];
+                double unk = outcome[getIndex("U")];
+                if(unk > pos && unk > neg){
+                    if(unk < 0.5){
+                        if(pos >= neg){
+                            return "P";
+                        }
+                        else{
+                            return "N";
+                        }
+                    }
+                    else{
+                        return "U";
+                    }
+                }
+                else {
+                    return super.getBestCategory(outcome);
+                }
+            }
+        };
 
 
         //System.out.print(doccatModel.getChunkerModel());
@@ -324,6 +360,7 @@ public class NLPTest {
                 String expected = line.substring(0, 1);
                 final String review = line.substring(2);
                 double[] outcomes = myCategorizer.categorize(review);
+//                System.out.println(String.valueOf(outcomes[0]) + String.valueOf(outcomes[1]) + String.valueOf(outcomes[2]));
                 String actual = myCategorizer.getBestCategory(outcomes);
                 final Map<String, Integer> category_row = confusionMatrix.get(expected);
                 category_row.put(actual, category_row.get(actual) + 1);
@@ -335,6 +372,7 @@ public class NLPTest {
                 }
                 return true;
             }
+
 
             @Override
             public Object getResult() {
@@ -408,7 +446,19 @@ public class NLPTest {
 
     }
 
-
+    @Test
+    public void fs_reviews() throws IOException{
+        final BufferedWriter sentimentWriter = Files.newWriter(new File("fs_test_sentiment"), Charset.defaultCharset());
+        for (ArrayList<Map<String, String>> restaurant : json("fs_tips_1.txt").values()) {
+            for (Map<String, String> review : restaurant) {
+                final String review_text = review.get("text").replaceAll("\\.[\r\n]", " ").replaceAll("[\r\n]", " ").toLowerCase();
+                sentimentWriter.append(review.get("sentiment")).append(" ")
+                        .append(review_text);
+                sentimentWriter.newLine();
+            }
+        }
+        sentimentWriter.close();
+    }
     @Test
     public void modelYelp() throws IOException {
 
@@ -417,7 +467,7 @@ public class NLPTest {
         final BufferedWriter ratingWriter = Files.newWriter(new File("yelp_model_rating"), Charset.defaultCharset());
         final BufferedWriter ratingTestDataWriter = Files.newWriter(new File("yelp_test_rating"), Charset.defaultCharset());
         int count = 0;
-        for (ArrayList<Map<String, String>> restaurant : json("resources/yelp_reviews_3.txt").values()) {
+        for (ArrayList<Map<String, String>> restaurant : json("yelp_reviews_3.txt").values()) {
             for (Map<String, String> review : restaurant) {
                 count++;
                 BufferedWriter sentiment = (count > INT) ? sentimentTestDataWriter : sentimentWriter;

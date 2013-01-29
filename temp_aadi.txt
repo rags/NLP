@@ -388,7 +388,6 @@ tiny
 sangria
 unique
 vodka
-),
 eggs
 sitting
 light
@@ -2614,7 +2613,6 @@ unable
 unacceptable
 vacation
 zucchini
-",
 =
 accent
 alley
@@ -2777,7 +2775,6 @@ unremarkable
 urban
 variations
 verizon
-,"
 14th
 28
 300
@@ -3573,7 +3570,6 @@ vegas
 xo
 yo
 ziebold
-!),
 !).
 11am
 55
@@ -4196,7 +4192,6 @@ wontons
 younger
 zing
 ~$
-.,
 00pm
 1am
 250

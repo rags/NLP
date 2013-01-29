@@ -1,13 +1,14 @@
 import opennlp.tools.doccat.FeatureGenerator;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
+import opennlp.tools.tokenize.Tokenizer;
+import opennlp.tools.tokenize.TokenizerME;
+import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.PlainTextByLineStream;
 import opennlp.tools.util.featuregen.StringPattern;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.*;
 
 import static java.lang.String.format;
 
@@ -23,29 +24,47 @@ public class FeaturePresenceGenerator  implements FeatureGenerator {
     String pos;
     String neg;
     String unk;
-    String words;
+    String[] words;
+    List<String> w;
+    String word_file;
 
     public FeaturePresenceGenerator() throws IOException {
 //        pos = readFileAsString("pos");
 //        neg = readFileAsString("neg");
 //        unk = readFileAsString("unk");
-        words = readFileAsString("temp_pdndud252525.txt");
+        word_file = readFileAsString("senti_wn_top_words.txt");
+        final Tokenizer tokenizer = tokenizer();
+//        words = tokenizer.tokenize(word_file);
+//        w =  Arrays.asList(words);
+    }
 
+    private TokenizerME tokenizer() throws IOException {
+        return new TokenizerME(new TokenizerModel(getClass().getResourceAsStream("en-token.bin")));
     }
 
     @Override
     public Collection<String> extractFeatures(String[] text) {
         Collection<String> bagOfWords = new ArrayList<String>(text.length);
-        HashSet<String> hashSet = new HashSet();
-        final String[] tags = posTaggerME.tag(text);
+        List<String> text_list = Arrays.asList(text);
+//        HashSet<String> hashSet = new HashSet();
+//        final String[] tags = posTaggerME.tag(text);
+//        for (String word:words) {
+//            if (text_list.contains(word)){
+//                bagOfWords.add("T");
+//            }
+//            else{
+//                bagOfWords.add("F");
+//            }
+//        }
+
         for (int i = 0; i < text.length; i++) {
 //            if (tags[i].startsWith("JJ") || tags[i].startsWith("NN") || tags[i].startsWith("R")) {
               if(check_exists(text[i])){
-                  hashSet.add(text[i]);
+                  bagOfWords.add(text[i]);
 //              }
             }
         }
-        return hashSet;
+        return bagOfWords;
     }
 
     private boolean check_exists(String word) {
@@ -58,7 +77,7 @@ public class FeaturePresenceGenerator  implements FeatureGenerator {
 //        else if(unk.contains(word)){
 //            return true;
 //        }
-        if (words.contains(word)){
+        if (word_file.contains(word)){
             return true;
         }
         return false;
