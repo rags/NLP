@@ -12,6 +12,8 @@ import opennlp.tools.doccat.*;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTagger;
 import opennlp.tools.postag.POSTaggerME;
+import opennlp.tools.sentdetect.SentenceDetectorME;
+import opennlp.tools.sentdetect.SentenceModel;
 import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
@@ -45,6 +47,14 @@ public class NLPTest {
 
     public static void main(String[] args) {
         System.out.print("d");
+    }
+
+    @Test
+    public void sent() throws IOException {
+        final SentenceDetectorME sentenceDetectorME = new SentenceDetectorME(new SentenceModel(getClass().getResourceAsStream("en-sent.bin")));
+        p(sentenceDetectorME.sentDetect("This is not good.Example is foo"));
+        p(sentenceDetectorME.sentDetect("This is not good. Example is foo"));
+        p(sentenceDetectorME.sentDetect("This is not good.example is foo"));
     }
 
     @Test

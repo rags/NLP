@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NLP.iml" filepath="$PROJECT_DIR$/NLP.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/apache-opennlp-1.5.2-incubating-src/opennlp-maxent/samples/sports/src/main/main.iml" filepath="$USER_HOME$/Downloads/apache-opennlp-1.5.2-incubating-src/opennlp-maxent/samples/sports/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/tfidf/tfidf.iml" filepath="$PROJECT_DIR$/tfidf/tfidf.iml" />
     </modules>
   </component>
